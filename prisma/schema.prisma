@@ -1,0 +1,69 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model agencies {
+  id        String   @id
+  name      String
+  ownerId   String   @unique
+  maxSeats  Int      @default(1)
+  createdAt DateTime @default(now())
+}
+
+model ls_webhooks {
+  id          String    @id
+  eventName   String
+  payload     Json
+  processedAt DateTime?
+}
+
+model subscriptions {
+  id             String               @id
+  userId         String
+  lemonSqueezyId String               @unique
+  customerId     String
+  variantId      String
+  status         subscriptions_status
+  trialEndsAt    DateTime?
+  renewsAt       DateTime?
+  endsAt         DateTime?
+  createdAt      DateTime             @default(now())
+  updatedAt      DateTime
+
+  @@index([userId], map: "subscriptions_userId_fkey")
+}
+
+model users {
+  id        String     @id
+  email     String     @unique
+  fullName  String?
+  password  String
+  company   String?
+  role      users_role @default(SOLO_USER)
+  agencyId  String?
+  createdAt DateTime   @default(now())
+  updatedAt DateTime
+
+  @@index([agencyId], map: "users_agencyId_fkey")
+}
+
+enum users_role {
+  SUPER_ADMIN
+  AGENCY_ADMIN
+  AGENCY_USER
+  SOLO_USER
+}
+
+enum subscriptions_status {
+  ACTIVE
+  ON_TRIAL
+  PAST_DUE
+  UNPAID
+  CANCELLED
+  EXPIRED
+}
