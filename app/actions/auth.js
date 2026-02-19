@@ -1,6 +1,7 @@
 "use server"
 
 import { createUser } from "@/lib/auth-service"
+import { redirect } from "next/navigation"
 
 export async function signup(formData) {
   const email = formData.get("email")
@@ -17,7 +18,6 @@ export async function signup(formData) {
       company,
     })
     console.log("User created successfully:", newUser.id)
-    return { success: "User created successfully!" }
   } catch (error) {
     console.error("Signup error details:", {
       message: error.message,
@@ -27,4 +27,5 @@ export async function signup(formData) {
       error: error.message || "Something went wrong." 
     }
   }
+  redirect("/dashboard")
 }
