@@ -1,3 +1,5 @@
+import { requireAuthentication } from "@/lib/auth-guard"
+import { redirect } from "next/navigation"
 import { AppSidebar } from "@/components/app-sidebar"
 import { ChartAreaInteractive } from "@/components/chart-area-interactive"
 import { DataTable } from "@/components/data-table"
@@ -10,7 +12,21 @@ import {
 
 import data from "./data.json"
 
-export default function Page() {
+export default async function Page() {
+  // RBAC Check: Require user to be authenticated
+  let user;
+  try {
+    user = await requireAuthentication();
+  } catch (error) {
+    if (error.message === "UNAUTHENTICATED") {
+      redirect("/login");
+    }
+    throw error;
+  }
+
+  // Log access for audit purposes (optional)
+  console.log(`Dashboard accessed by user: ${user.email} (Role: ${user.role})`);
+
   return (
     <SidebarProvider
       style={

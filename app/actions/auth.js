@@ -1,6 +1,7 @@
 "use server"
 
 import { createUser } from "@/lib/auth-service"
+import { createSession, destroySession } from "@/lib/session"
 import { redirect } from "next/navigation"
 import prisma from "@/lib/prisma"
 import bcrypt from "bcryptjs"
@@ -20,6 +21,9 @@ export async function signup(formData) {
       company,
     })
     console.log("User created successfully:", newUser.id)
+    
+    // Create session for new user
+    await createSession(newUser)
   } catch (error) {
     console.error("Signup error details:", {
       message: error.message,
@@ -50,7 +54,13 @@ export async function login(prevState, formData) {
       return { error: "Invalid email or password." }
     }
 
-    // Handle session creation/JWT logic here...
+    // Create session for authenticated user
+    await createSession({
+      id: user.id,
+      email: user.email,
+      fullName: user.fullName,
+      role: user.role,
+    })
     
     isSuccess = true;
   } catch (error) {
@@ -62,4 +72,13 @@ export async function login(prevState, formData) {
   if (isSuccess) {
     redirect("/dashboard")
   }
+}
+
+export async function logout() {
+  try {
+    await destroySession()
+  } catch (error) {
+    console.error("Logout error:", error)
+  }
+  redirect("/login")
 }
