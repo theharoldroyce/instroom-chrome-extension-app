@@ -1,3 +1,6 @@
+"use client"
+import { useActionState, useState, useEffect } from "react"
+import { login } from "@/app/actions/auth"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import {
@@ -19,6 +22,14 @@ export function LoginForm({
   className,
   ...props
 }) {
+
+  const [state, formAction, isPending] = useActionState(login, null)
+  const [error, setError] = useState("")
+  useEffect(() => {
+    if (state && state.error) {
+      setError(state.error)
+    }
+  }, [state])
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>
@@ -29,11 +40,12 @@ export function LoginForm({
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form>
+          <form action={formAction}>
+            {error && !isPending && <div className="text-red-500 text-sm mb-4">{error}</div>}
             <FieldGroup>
               <Field>
                 <FieldLabel htmlFor="email">Email</FieldLabel>
-                <Input id="email" type="email" placeholder="m@example.com" required />
+                <Input id="email" name="email" type="email" placeholder="m@example.com" required />
               </Field>
               <Field>
                 <div className="flex items-center">
@@ -44,15 +56,15 @@ export function LoginForm({
                     Forgot your password?
                   </a>
                 </div>
-                <Input id="password" type="password" required />
+                <Input id="password" name="password" type="password" required />
               </Field>
               <Field>
-                <Button type="submit">Login</Button>
+                <Button type="submit" disabled={isPending}>{isPending ? "Logging in..." : "Login"}</Button>
                 <Button variant="outline" type="button">
                   Login with Google
                 </Button>
                 <FieldDescription className="text-center">
-                  Don&apos;t have an account? <a href="#">Sign up</a>
+                  Don&apos;t have an account? <a href="/signup">Sign up</a>
                 </FieldDescription>
               </Field>
             </FieldGroup>
