@@ -47,22 +47,22 @@ const data = {
   navMain: [
     {
       title: "Dashboard",
-      url: "#",
+      url: "/dashboard",
       icon: IconDashboard,
     },
     {
       title: "Billings",
-      url: "#",
+      url: "/billing",
       icon: IconCreditCard,
     },
     {
       title: "Settings",
-      url: "#",
+      url: "/settings",
       icon: IconSettings,
     },
     {
       title: "Contact Support",
-      url: "#",
+      url: "/contact-support",
       icon: IconHelp,
     },
   ],
