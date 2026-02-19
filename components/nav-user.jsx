@@ -29,10 +29,27 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar"
 
+import {logout}  from "@/app/actions/auth"
+import { useState } from "react"
+
 export function NavUser({
   user
 }) {
+
+  const [isLoggingOut, setIsLoggingOut] = useState(false)
+
+    const handleLogout = async () => {
+    setIsLoggingOut(true)
+    try {
+      await logout()
+    } catch (error) {
+      console.error("Logout failed:", error)
+      setIsLoggingOut(false)
+    }
+  }
+
   const { isMobile } = useSidebar()
+
 
   return (
     <SidebarMenu>
@@ -90,7 +107,7 @@ export function NavUser({
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>
+            <DropdownMenuItem onClick={handleLogout} disabled={isLoggingOut} variant="destructive">
               <IconLogout />
               Log out
             </DropdownMenuItem>

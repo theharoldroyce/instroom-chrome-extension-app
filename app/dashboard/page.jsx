@@ -29,12 +29,12 @@ export default async function Page() {
 
   return (
     <SidebarProvider
-      style={
-        {
+      style=
+        {{
           "--sidebar-width": "calc(var(--spacing) * 72)",
-          "--header-height": "calc(var(--spacing) * 12)"
-        }
-      }>
+          "--header-height": "calc(var(--spacing) * 16)"
+        }}
+      >
       <AppSidebar variant="inset" />
       <SidebarInset>
         <SiteHeader />
