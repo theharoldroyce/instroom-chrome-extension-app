@@ -15,7 +15,7 @@ export default async function Home() {
       <header className="sticky top-0 z-50 w-full border-b border-zinc-200 bg-white/80 backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-950/80">
         <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
           <div className="flex items-center gap-2 font-bold text-xl">
-            <div className="h-6 w-6 rounded-full bg-black dark:bg-white" />
+            <div className="h-6 w-6 rounded-full bg-primary dark:bg-primary" />
             <span>Instroom</span>
           </div>
           <nav className="hidden gap-6 md:flex">
@@ -35,7 +35,7 @@ export default async function Home() {
             </Link>
             <Link
               href="/signup"
-              className="rounded-md bg-black px-4 py-2 text-sm font-medium text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
+              className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/80"
             >
               Get Started
             </Link>
@@ -59,7 +59,7 @@ export default async function Home() {
               <div className="space-x-4">
                 <Link
                   href="/signup"
-                  className="inline-flex h-10 items-center justify-center rounded-md bg-black px-8 text-sm font-medium text-white shadow transition-colors hover:bg-zinc-800 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-zinc-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
+                  className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50 dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/80"
                 >
                   Start for Free
                 </Link>
@@ -92,7 +92,7 @@ export default async function Home() {
             </div>
             <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-3 lg:gap-12">
               <div className="flex flex-col justify-center space-y-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-black text-white dark:bg-white dark:text-black">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-primary-foreground dark:bg-primary dark:text-primary-foreground">
                   <svg
                     className=" h-6 w-6"
                     fill="none"
@@ -114,7 +114,7 @@ export default async function Home() {
                 </p>
               </div>
               <div className="flex flex-col justify-center space-y-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-black text-white dark:bg-white dark:text-black">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-primary-foreground dark:bg-primary dark:text-primary-foreground">
                   <svg
                     className=" h-6 w-6"
                     fill="none"
@@ -137,7 +137,7 @@ export default async function Home() {
                 </p>
               </div>
               <div className="flex flex-col justify-center space-y-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-black text-white dark:bg-white dark:text-black">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-primary-foreground dark:bg-primary dark:text-primary-foreground">
                   <svg
                     className=" h-6 w-6"
                     fill="none"
@@ -194,15 +194,15 @@ export default async function Home() {
                 </div>
                 <ul className="mt-6 space-y-3 text-sm text-zinc-500 dark:text-zinc-400">
                   <li className="flex items-center">
-                    <svg className="mr-2 h-4 w-4 text-black dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    <svg className="mr-2 h-4 w-4 text-primary dark:text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
                     View Follower Count
                   </li>
                   <li className="flex items-center">
-                    <svg className="mr-2 h-4 w-4 text-black dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    <svg className="mr-2 h-4 w-4 text-primary dark:text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
                     Basic Engagement Rate
                   </li>
                   <li className="flex items-center">
-                    <svg className="mr-2 h-4 w-4 text-black dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    <svg className="mr-2 h-4 w-4 text-primary dark:text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
                     100 Credits
                   </li>
                 </ul>
@@ -214,32 +214,32 @@ export default async function Home() {
                 </Link>
               </div>
               {/* Solo Plan */}
-              <div className="flex flex-col rounded-lg border border-black bg-black p-6 shadow-sm dark:border-white dark:bg-white">
+              <div className="flex flex-col rounded-lg border border-primary bg-primary p-6 shadow-sm dark:border-primary dark:bg-primary">
                 <div className="space-y-2">
-                  <h3 className="text-2xl font-bold text-white dark:text-black">Solo</h3>
-                  <p className="text-zinc-400 dark:text-zinc-600">Unlock full data for content creators.</p>
+                  <h3 className="text-2xl font-bold text-primary-foreground dark:text-primary-foreground">Solo</h3>
+                  <p className="text-primary-foreground/70 dark:text-primary-foreground/70">Unlock full data for content creators.</p>
                 </div>
-                <div className="mt-4 flex items-baseline text-3xl font-bold text-white dark:text-black">
+                <div className="mt-4 flex items-baseline text-3xl font-bold text-primary-foreground dark:text-primary-foreground">
                   $29
-                  <span className="ml-1 text-xl font-normal text-zinc-400 dark:text-zinc-600">/mo</span>
+                  <span className="ml-1 text-xl font-normal text-primary-foreground/70 dark:text-primary-foreground/70">/mo</span>
                 </div>
-                <ul className="mt-6 space-y-3 text-sm text-zinc-400 dark:text-zinc-600">
+                <ul className="mt-6 space-y-3 text-sm text-primary-foreground/70 dark:text-primary-foreground/70">
                   <li className="flex items-center">
-                    <svg className="mr-2 h-4 w-4 text-white dark:text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    <svg className="mr-2 h-4 w-4 text-primary-foreground dark:text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
                     Unlock Emails & Location
                   </li>
                   <li className="flex items-center">
-                    <svg className="mr-2 h-4 w-4 text-white dark:text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    <svg className="mr-2 h-4 w-4 text-primary-foreground dark:text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
                     Avg Comments & Video Views
                   </li>
                   <li className="flex items-center">
-                    <svg className="mr-2 h-4 w-4 text-white dark:text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    <svg className="mr-2 h-4 w-4 text-primary-foreground dark:text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
                     Unlimited Credits
                   </li>
                 </ul>
                 <Link
                   href="/signup"
-                  className="mt-8 inline-flex h-10 items-center justify-center rounded-md bg-white px-8 text-sm font-medium text-black shadow transition-colors hover:bg-zinc-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-zinc-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-black dark:text-white dark:hover:bg-zinc-800"
+                  className="mt-8 inline-flex h-10 items-center justify-center rounded-md bg-primary-foreground px-8 text-sm font-medium text-primary shadow transition-colors hover:bg-primary-foreground/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50 dark:bg-primary-foreground dark:text-primary dark:hover:bg-primary-foreground/80"
                 >
                   Get Started
                 </Link>
@@ -256,21 +256,21 @@ export default async function Home() {
                 </div>
                 <ul className="mt-6 space-y-3 text-sm text-zinc-500 dark:text-zinc-400">
                   <li className="flex items-center">
-                    <svg className="mr-2 h-4 w-4 text-black dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    <svg className="mr-2 h-4 w-4 text-primary dark:text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
                     Unlimited Users
                   </li>
                   <li className="flex items-center">
-                    <svg className="mr-2 h-4 w-4 text-black dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    <svg className="mr-2 h-4 w-4 text-primary dark:text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
                     Export Data (CSV)
                   </li>
                   <li className="flex items-center">
-                    <svg className="mr-2 h-4 w-4 text-black dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                    <svg className="mr-2 h-4 w-4 text-primary dark:text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
                     Priority Support
                   </li>
                 </ul>
                 <Link
                   href="/contact"
-                  className="mt-8 inline-flex h-10 items-center justify-center rounded-md border border-zinc-200 bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-zinc-950 disabled:pointer-events-none disabled:opacity-50 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:bg-zinc-800 dark:hover:text-zinc-50"
+                  className="mt-8 inline-flex h-10 items-center justify-center rounded-md border border-primary bg-primary/10 px-8 text-sm font-medium shadow-sm transition-colors hover:bg-primary/20 hover:text-primary focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50 dark:border-primary dark:bg-primary/10 dark:hover:bg-primary/20 dark:hover:text-primary"
                 >
                   Contact Sales
                 </Link>
