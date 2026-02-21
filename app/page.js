@@ -1,6 +1,14 @@
 import Link from "next/link";
+import { redirect } from "next/navigation";
+import { getCurrentUser } from "@/lib/session";
 
-export default function Home() {
+export default async function Home() {
+  const user = await getCurrentUser();
+
+  // If user is already logged in, send them to the dashboard
+  if (user) {
+    redirect("/dashboard");
+  }
   return (
     <div className="flex min-h-screen flex-col bg-white dark:bg-zinc-950">
       {/* Header */}
